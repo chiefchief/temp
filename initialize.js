@@ -17,6 +17,8 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 (async () => {
+  exec('brew tap jondot/tap');
+  exec('brew install hygen');
   // exec('npm install --save react-native-image-gallery', (err, stdout, stderr) => {
   //   if (err) {
   //     console.error(err);
