@@ -34,13 +34,17 @@ const exec = util.promisify(require('child_process').exec);
 
   // WELL WORKING
   // const {error, stdout, stderr} =
-  await exec(
+  const z = await exec(
     'npm i --save-dev redux-devtools-extension husky babel-plugin-module-resolver jetifier @commitlint/config-conventional @commitlint/cli @types/react-redux @types/react-native-vector-icons',
   );
 
-  await exec(
+  console.log(z.stdout);
+
+  const y = await exec(
     'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage redux redux-saga react-redux redux-persist react-native-splash-screen i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
   );
+
+  console.log(y.stdout);
 
   const a = await exec('npm install --save react-native-image-gallery');
   console.log(a, 'AAAA');

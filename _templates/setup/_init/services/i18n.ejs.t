@@ -4,11 +4,11 @@ unless_exists: true
 ---
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import {langiages} from '@constants';
+import {languages} from '@constants';
 
 const en = require('./localization/en.json');
 
-const defaultLanguage = 'en';
+const defaultLanguage = languages.EN;
 
 export default i18n.use(initReactI18next).init({
   resources: {

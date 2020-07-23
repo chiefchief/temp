@@ -13,7 +13,7 @@ export {default as Image} from 'react-native-fast-image';
 // DATAVIEW
 
 // LAYOUT
-export {default as KeyboardAvoidingView} from './layout/KeyboardAvoidingView';
+export {default as KeyboardAvoidingView} from './layout/KeyboardAvoidingView/KeyboardAvoidingView';
 
 // NAVIGATION
 
