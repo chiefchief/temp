@@ -5,7 +5,7 @@ unless_exists: true
 import axios from 'axios';
 import {TGenerateOptions, TFormatResponse} from '@types';
 
-const baseURL = __DEV__ ? 'http://46.101.182.181:1204/' : 'http://46.101.182.181:1204/';
+const baseURL = __DEV__ ? 'http://192.168.0.1:1204/' : 'http://192.168.0.1:1204/';
 
 const instance = axios.create();
 instance.defaults.baseURL = baseURL;

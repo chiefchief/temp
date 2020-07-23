@@ -8,6 +8,6 @@ module.exports = [
     type: 'select',
     name: 'folder',
     message: 'Select component folder...',
-    choices: ['control', 'layout', 'navigation', 'typography', 'behavior', 'dataview', 'container'],
+    choices: ['control', 'dataview', 'layout', 'navigation', 'typography'],
   },
 ];
