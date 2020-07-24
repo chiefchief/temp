@@ -3,6 +3,6 @@ to: src/services/localization/en.json
 unless_exists: true
 ---
 {
-  "Initial": "Initial",
+  "Welcome to ArtJoker team": "Welcome to ArtJoker team",
   "": ""
 }

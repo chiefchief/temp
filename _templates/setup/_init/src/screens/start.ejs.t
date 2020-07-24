@@ -13,7 +13,7 @@ const Start: React.FC<TProps> = () => {
 
   return (
     <View style={styles.container}>
-      <Text>{t('Initial')}</Text>
+      <Text>{t('Welcome to ArtJoker team')}</Text>
     </View>
   );
 };

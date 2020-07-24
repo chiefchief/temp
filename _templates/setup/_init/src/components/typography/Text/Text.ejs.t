@@ -20,7 +20,7 @@ const Text: React.FC<TProps> = ({style, children, numberOfLines, ellipsizeMode, 
 };
 Text.defaultProps = {
   style: {},
-  numberOfLines: Infinity,
+  numberOfLines: 1000,
   ellipsizeMode: 'tail',
 };
 
