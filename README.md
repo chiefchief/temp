@@ -1,9 +1,9 @@
 # Get Started
 
-* [AutoComplete Prompt](#Initialization)
-* [Splash screen](#Splash-screen)
+* [Initialization](#Initialization)
+* [Splash screen](#splash-screen)
 
-## Initialization(#Initialization)
+## Initialization
 1) Initialize project
 ```
 npx react-native init AwesomeTSProject --template react-native-template-typescript
@@ -28,5 +28,5 @@ git clone git@github.com:chiefchief/temp.git && cp -rf ./temp/_templates ./ && c
   }
 ```
 
-## Splash screen(#Splash-screen)
+## Splash screen
 https://github.com/zoontek/react-native-bootsplash
