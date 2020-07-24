@@ -16,6 +16,9 @@ const {
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
+// PROJECT NAME
+const { name } = require('./app.json');
+
 (async () => {
   // await exec('brew tap jondot/tap');
   // await exec('brew install hygen');
@@ -34,20 +37,21 @@ const exec = util.promisify(require('child_process').exec);
 
   // WELL WORKING
   // const {error, stdout, stderr} =
-  const z = await exec(
-    'npm i --save-dev redux-devtools-extension husky babel-plugin-module-resolver jetifier @commitlint/config-conventional @commitlint/cli @types/react-redux @types/react-native-vector-icons',
+  const saveDev = await exec(
+    'npm i --save-dev husky babel-plugin-module-resolver jetifier @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
   );
+  console.log(saveDev.stdout);
 
-  console.log(z.stdout);
-
-  const y = await exec(
-    'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage redux redux-saga react-redux redux-persist react-native-splash-screen i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
+  const save = await exec(
+    'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
   );
+  console.log(save.stdout);
 
-  console.log(y.stdout);
+  const reduxSaveDev = await exec('npm i --save-dev redux-devtools-extension @types/react-redux');
+  console.log(reduxSaveDev.stdout);
 
-  const a = await exec('npm install --save react-native-image-gallery');
-  console.log(a, 'AAAA');
+  const reduxSave = await exec('npm i -s redux redux-saga react-redux redux-persist');
+  console.log(reduxSave.stdout);
 
   // PROMPT
   // const {name, bundleName} = await prompt([
