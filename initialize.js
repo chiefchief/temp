@@ -15,44 +15,44 @@ const {
 // const {exec, execSync, spawn} = require('child_process');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-
+const {execSync} = require('child_process');
 // PROJECT NAME
-const { name } = require('./app.json');
+const {name} = require('./app.json');
 
 (async () => {
   // await exec('brew tap jondot/tap');
   // await exec('brew install hygen');
-  // exec('npm install --save react-native-image-gallery', (err, stdout, stderr) => {
-  //   if (err) {
-  //     console.error(err);
-  //     return;
-  //   }
-  //   console.log(stdout, 'STDOUT');
-  //   console.log(stderr, 'STDERR');
-  // });
 
-  // YOU CAN TRY THIS
-  // const a = await execSync('npm install --save react-native-image-gallery');
-  // console.log(a, 'AAAA');
-
-  // WELL WORKING
-  // const {error, stdout, stderr} =
-  const saveDev = await exec(
+  execSync(
     'npm i --save-dev husky babel-plugin-module-resolver jetifier @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
+    {stdio: 'inherit'},
   );
-  console.log(saveDev.stdout);
 
-  const save = await exec(
+  execSync(
     'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
+    {stdio: 'inherit'},
   );
-  console.log(save.stdout);
 
-  const reduxSaveDev = await exec('npm i --save-dev redux-devtools-extension @types/react-redux');
-  console.log(reduxSaveDev.stdout);
+  execSync('HYGEN_OVERWRITE=1 hygen setup _init', {stdio: 'inherit'});
 
-  const reduxSave = await exec('npm i -s redux redux-saga react-redux redux-persist');
-  console.log(reduxSave.stdout);
+  // SELECT
+  const select = await new Select({
+    name: 'store',
+    message: 'Select Store',
+    choices: ['redux', 'reactn', 'none'],
+  }).run();
 
+  if (select === 'redux') {
+    console.log('redux');
+    execSync('npm i --save-dev redux-devtools-extension @types/react-redux', {
+      stdio: 'inherit',
+    });
+    execSync('npm i -s redux redux-saga react-redux redux-persist', {
+      stdio: 'inherit',
+    });
+  } else if (select === 'reactn') {
+    console.log('reactn');
+  }
   // PROMPT
   // const {name, bundleName} = await prompt([
   //   {
@@ -271,11 +271,3 @@ const { name } = require('./app.json');
   // console.log(togled, '---> togled');
   console.log('Finished!!--->');
 })();
-
-// const child = execSync('npm install react-native-image-picker --save', function (error, stdout, stderr) {
-//   console.log('stdout: ' + stdout);
-//   console.log('stderr: ' + stderr);
-//   if (error !== null) {
-//     console.log('exec error: ' + error);
-//   }
-// });
