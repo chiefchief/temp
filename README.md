@@ -1,5 +1,8 @@
 # Initialization
-1) npx react-native init AwesomeTSProject --template react-native-template-typescript
+1) Initialize project
+```
+npx react-native init AwesomeTSProject --template react-native-template-typescript
+```
 
 2) Navigate to your project folder and paste this code
 ```
