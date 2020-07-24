@@ -1,7 +1,7 @@
 # Get Started
 
 * [Initialization](#Initialization)
-* [Splash screen](#splash-screen)
+* [Splash screen](#Splash-screen)
 
 ## Initialization
 1) Initialize project
