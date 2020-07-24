@@ -29,4 +29,4 @@ git clone git@github.com:chiefchief/temp.git && cp -rf ./temp/_templates ./ && c
 ```
 
 ## Splash screen
-https://github.com/zoontek/react-native-bootsplash
+[Use this library](https://github.com/zoontek/react-native-bootsplash)
