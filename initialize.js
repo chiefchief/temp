@@ -35,6 +35,8 @@ const {name} = require('./app.json');
 
   execSync('HYGEN_OVERWRITE=1 hygen setup _init', {stdio: 'inherit'});
 
+  execSync(`hygen setup _native --appName ${name}`, {stdio: 'inherit'});
+
   // SELECT
   const select = await new Select({
     name: 'store',
@@ -53,6 +55,11 @@ const {name} = require('./app.json');
   } else if (select === 'reactn') {
     console.log('reactn');
   }
+
+  // <!--------------------->
+
+  execSync('npm run watchman', {stdio: 'inherit'});
+
   // PROMPT
   // const {name, bundleName} = await prompt([
   //   {
