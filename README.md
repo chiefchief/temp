@@ -1,3 +1,8 @@
+##GET STARTED
+[Initialization](#-Initialization)
+[Splash screen](#-Splash screen)
+
+
 # Initialization
 1) Initialize project
 ```
