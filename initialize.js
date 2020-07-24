@@ -45,7 +45,7 @@ const {name} = require('./app.json');
   }).run();
 
   if (select === 'redux') {
-    console.log('redux');
+    console.log('Redux Installation...');
     execSync('npm i --save-dev redux-devtools-extension @types/react-redux', {
       stdio: 'inherit',
     });
@@ -55,6 +55,7 @@ const {name} = require('./app.json');
   } else if (select === 'reactn') {
     console.log('reactn');
   }
+  execSync(`hygen setup ${select}`, {stdio: 'inherit'});
 
   // <!--------------------->
 
