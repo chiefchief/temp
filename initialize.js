@@ -40,7 +40,7 @@ const {name} = require('./app.json');
   // SELECT
   const select = await new Select({
     name: 'store',
-    message: 'Select Store',
+    message: 'Select store',
     choices: ['redux', 'reactn', 'none'],
   }).run();
 
@@ -53,7 +53,13 @@ const {name} = require('./app.json');
       stdio: 'inherit',
     });
   } else if (select === 'reactn') {
-    console.log('reactn');
+    console.log('Reactn Installation...');
+    execSync('npm i --save-dev reactn-devtools', {
+      stdio: 'inherit',
+    });
+    execSync('npm i -s reactn reactn-persist', {
+      stdio: 'inherit',
+    });
   }
   execSync(`hygen setup ${select}`, {stdio: 'inherit'});
 
