@@ -15,9 +15,9 @@ const {
 // const {exec, execSync, spawn} = require('child_process');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-const {execSync} = require('child_process');
+const { execSync } = require('child_process');
 // PROJECT NAME
-const {name} = require('./app.json');
+const { name } = require('./app.json');
 
 (async () => {
   // await exec('brew tap jondot/tap');
@@ -25,17 +25,17 @@ const {name} = require('./app.json');
 
   execSync(
     'npm i --save-dev babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
-    {stdio: 'inherit'},
+    { stdio: 'inherit' },
   );
 
   execSync(
     'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
-    {stdio: 'inherit'},
+    { stdio: 'inherit' },
   );
 
-  execSync('HYGEN_OVERWRITE=1 hygen setup _init', {stdio: 'inherit'});
+  execSync('HYGEN_OVERWRITE=1 hygen setup _init', { stdio: 'inherit' });
 
-  execSync(`hygen setup _native --appName ${name}`, {stdio: 'inherit'});
+  execSync(`hygen setup _native --appName ${name}`, { stdio: 'inherit' });
 
   // SELECT
   const select = await new Select({
@@ -61,11 +61,11 @@ const {name} = require('./app.json');
       stdio: 'inherit',
     });
   }
-  execSync(`hygen setup ${select}`, {stdio: 'inherit'});
+  execSync(`hygen setup ${select}`, { stdio: 'inherit' });
 
   // <!--------------------->
 
-  execSync('npm run watchman', {stdio: 'inherit'});
+  // execSync('npm run watchman', {stdio: 'inherit'});
 
   // PROMPT
   // const {name, bundleName} = await prompt([
