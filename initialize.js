@@ -70,6 +70,8 @@ const { name } = require('./app.json');
     disabled: 'No',
   }).run();
 
+  console.log(toggle, 'TOGGLE');
+
   if (toggle) {
     execSync('npm install --save @sentry/react-native', { stdio: 'inherit' });
     execSync('hygen setup sentry', { stdio: 'inherit' });
