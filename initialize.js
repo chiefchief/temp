@@ -13,10 +13,9 @@ const {
 } = require('enquirer');
 // live-plugin-manager AS ALTERNATIVE
 // const {exec, execSync, spawn} = require('child_process');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+// const util = require('util');
+// const exec = util.promisify(require('child_process').exec);
 const { execSync } = require('child_process');
-// PROJECT NAME
 const { name } = require('./app.json');
 
 (async () => {
