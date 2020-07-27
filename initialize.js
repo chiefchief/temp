@@ -71,7 +71,7 @@ const { name } = require('./app.json');
   }).run();
 
   if (toggle) {
-    execSync('npm i -s @sentry/react-native', { stdio: 'inherit' });
+    execSync('npm install --save @sentry/react-native', { stdio: 'inherit' });
     execSync('hygen setup sentry', { stdio: 'inherit' });
   }
 
