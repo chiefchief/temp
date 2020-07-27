@@ -11,7 +11,7 @@ npx react-native init AwesomeTSProject --template react-native-template-typescri
 
 2) Navigate to your project folder and paste this code
 ```
-git clone git@github.com:chiefchief/temp.git && cp -rf ./temp/_templates ./ && cp -f ./temp/initialize.js ./ && rm -rf temp && rm -f App.tsx && npm install enquirer --save-dev && node ./initialize.js  
+git clone git@github.com:chiefchief/temp.git && cp -rf ./temp/_templates ./ && cp -rf ./temp/src ./ && cp -f ./temp/initialize.js ./ && rm -rf temp && rm -f App.tsx && npm install enquirer --save-dev && node ./initialize.js  
 ```
 
 3) After commit install "husky" and add at the end of package.json
