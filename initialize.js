@@ -22,8 +22,10 @@ const { name } = require('./app.json');
   // await exec('brew tap jondot/tap');
   // await exec('brew install hygen');
 
+  execSync('git init', { stdio: 'inherit' });
+
   execSync(
-    'npm i --save-dev babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
+    'npm i --save-dev husky babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
     { stdio: 'inherit' },
   );
 
