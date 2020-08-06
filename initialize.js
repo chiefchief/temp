@@ -25,7 +25,7 @@ const {name} = require('./app.json');
   execSync('git init', {stdio: 'inherit'});
 
   execSync(
-    'npm i --save-dev babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
+    'npm i --save-dev @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
     {stdio: 'inherit'},
   );
 
