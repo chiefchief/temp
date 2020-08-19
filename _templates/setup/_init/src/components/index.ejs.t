@@ -18,5 +18,6 @@ export {default as KeyboardAvoidingView} from './layout/KeyboardAvoidingView/Key
 // NAVIGATION
 
 // TYPOGRAPHY
-export {default as Text} from './typography/Text/Text';
 export {default as Icon} from './typography/Icon/Icon';
+export {default as Text} from './typography/Text/Text';
+export {default as TextInput} from './typography/TextInput/TextInput';

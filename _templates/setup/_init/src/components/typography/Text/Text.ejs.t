@@ -3,32 +3,15 @@ to: src/components/typography/Text/Text.tsx
 unless_exists: true
 ---
 import React from 'react';
-import {Text as RNText, TextStyle, TextProps, StyleProp} from 'react-native';
+import {Text as RNText, TextProps} from 'react-native';
 import styles from './styles';
 
-const Text: React.FC<TProps> = ({style, children, numberOfLines, ellipsizeMode, textProps}) => {
+const Text: React.FC<TextProps> = ({children, style, ...otherProps}) => {
   return (
-    <RNText
-      style={[styles.defaultText, style]}
-      numberOfLines={numberOfLines}
-      ellipsizeMode={ellipsizeMode}
-      {...textProps}
-    >
+    <RNText style={[styles.defaultText, style]} {...otherProps}>
       {children}
     </RNText>
   );
-};
-Text.defaultProps = {
-  style: {},
-  numberOfLines: 1000,
-  ellipsizeMode: 'tail',
-};
-
-type TProps = {
-  style?: StyleProp<TextStyle>;
-  numberOfLines?: number;
-  ellipsizeMode?: 'head' | 'middle' | 'tail' | 'clip';
-  textProps?: TextProps;
 };
 
 export default Text;
