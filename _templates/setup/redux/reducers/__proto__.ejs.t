@@ -2,13 +2,20 @@
 to: src/reducers/__proto__.ts
 unless_exists: true
 ---
-export const INITIAL_PERSISTED: (data?: any) => T_Persisted = (data = {}) => ({
-  token: data.token || '',
-  // ...other params if you need
-  name: data.name || '',
-});
+export class INITIAL_GLOBAL {
+  constructor(data: any = {}) {
+    this.userName = data.userName || '';
+  }
+  userName: string;
+}
 
-type T_Persisted = {
+export class INITIAL_PERSISTED {
+  constructor(data: any = {}) {
+    this.token = data.token || '';
+    this.name = data.name || '';
+    this.bool = data.bool || false;
+  }
   token: string;
   name: string;
-};
+  bool: boolean;
+}
