@@ -10,7 +10,7 @@ const LOG_IN = '[_persisted] LOG_IN';
 const CHANGE_TOKEN = '[_persisted] CHANGE_SPLASH';
 const RESET_ADDITIONAL = '[_persisted] RESET_ADDITIONAL';
 
-const initialstate = INITIAL_PERSISTED();
+const initialstate = new INITIAL_PERSISTED();
 
 export default (state = initialstate, action: any) => {
   switch (action.type) {

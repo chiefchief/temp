@@ -3,12 +3,13 @@ to: src/reducers/<%=h.changeCase.camelCase(name)%>.ts
 ---
 import { takeLatest, put, call, select } from 'redux-saga/effects'
 import { push } from '@services'
+import {INITIAL_<%=h.changeCase.constant(name)%>} from './__proto__';
 
 const GET_<%=h.changeCase.constant(name)%> = '[<%=h.changeCase.camelCase(name)%>] GET_<%=h.changeCase.constant(name)%>'
 const SET_<%=h.changeCase.constant(name)%> = '[<%=h.changeCase.camelCase(name)%>] SET_<%=h.changeCase.constant(name)%>'
 const RESET_<%=h.changeCase.constant(name)%> = '[<%=h.changeCase.camelCase(name)%>] RESET_<%=h.changeCase.constant(name)%>'
 
-const initialstate = {}
+const initialstate = new INITIAL_<%=h.changeCase.constant(name)%>();
 
 export default (state = initialstate, action: any) => {
 	switch (action.type) {
