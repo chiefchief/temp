@@ -1,6 +1,6 @@
 ---
 inject: true
-to: src/reducers/index.ts
+to: src/reducers/types.ts
 before: // ADD IMPORT TYPE
 ---
   INITIAL_<%=h.changeCase.constant(name)%>,
