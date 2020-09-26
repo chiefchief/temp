@@ -14,7 +14,7 @@ const initialstate = new INITIAL_<%=h.changeCase.constant(name)%>();
 export default (state = initialstate, action: any) => {
 	switch (action.type) {
 		case SET_<%=h.changeCase.constant(name)%>:
-			return Object.assign({}, { ...state, ...action.data })
+			return new INITIAL_<%=h.changeCase.constant(name)%>({...state, data: action.data})
 		case RESET_<%=h.changeCase.constant(name)%>:
 			return initialstate
 		default:

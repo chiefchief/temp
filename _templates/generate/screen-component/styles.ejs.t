@@ -1,9 +1,7 @@
 ---
 to: src/screens/<%=folder%>/components/<%=h.changeCase.pascal(name)%>/styles.ts
 ---
-import { StyleSheet, Dimensions } from 'react-native'
-
-const { width } = Dimensions.get('window')
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
 	container: {},
