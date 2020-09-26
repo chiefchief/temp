@@ -4,6 +4,7 @@ to: tsconfig.json
 after: baseUrl
 skip_if: assets
 ---
+    "baseUrl": "./",
     "paths": {
       "@assets": ["src/assets/index"],
       "@components": ["src/components/index"],
