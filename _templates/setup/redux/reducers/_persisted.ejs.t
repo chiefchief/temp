@@ -2,7 +2,6 @@
 to: src/reducers/_persisted.ts
 unless_exists: true
 ---
-import {takeLatest} from 'redux-saga/effects';
 import {INITIAL_PERSISTED} from './__proto__';
 
 const CHANGE_TOKEN = '[_persisted] CHANGE_SPLASH';

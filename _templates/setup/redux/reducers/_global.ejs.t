@@ -3,7 +3,7 @@ to: src/reducers/_global.ts
 unless_exists: true
 ---
 // USES FOR GLOBAL NOT PERSISTED ITEMS
-
+import {takeLatest} from 'redux-saga/effects';
 import {INITIAL_GLOBAL} from './__proto__';
 
 const LOG_OUT = '[_persisted] LOG_OUT';
