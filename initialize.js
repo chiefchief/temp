@@ -15,34 +15,34 @@ const {
 // const {exec, execSync, spawn} = require('child_process');
 // const util = require('util');
 // const exec = util.promisify(require('child_process').exec);
-const {execSync} = require('child_process');
-const {name} = require('./app.json');
+const { execSync } = require('child_process');
+const { name } = require('./app.json');
 
 (async () => {
   // await exec('brew tap jondot/tap');
   // await exec('brew install hygen');
 
-  execSync('git init', {stdio: 'inherit'});
+  execSync('git init', { stdio: 'inherit' });
 
   execSync(
     'npm i --save-dev @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
-    {stdio: 'inherit'},
+    { stdio: 'inherit' },
   );
 
   execSync(
     'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-community/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view react-native-fast-image',
-    {stdio: 'inherit'},
+    { stdio: 'inherit' },
   );
 
-  execSync('HYGEN_OVERWRITE=1 hygen setup _init', {stdio: 'inherit'});
+  execSync('HYGEN_OVERWRITE=1 hygen setup _init', { stdio: 'inherit' });
 
-  execSync(`hygen setup _native --appName ${name}`, {stdio: 'inherit'});
+  execSync(`hygen setup _native --appName ${name}`, { stdio: 'inherit' });
 
   // SELECT
   const select = await new Select({
     name: 'store',
     message: 'Select store',
-    choices: ['redux', 'reactn', 'none'],
+    choices: ['redux', 'none'],
   }).run();
 
   if (select === 'redux') {
@@ -53,16 +53,9 @@ const {name} = require('./app.json');
     execSync('npm i -s redux redux-saga react-redux redux-persist', {
       stdio: 'inherit',
     });
-  } else if (select === 'reactn') {
-    console.log('Reactn Installation...');
-    execSync('npm i --save-dev reactn-devtools', {
-      stdio: 'inherit',
-    });
-    execSync('npm i -s reactn reactn-persist', {
-      stdio: 'inherit',
-    });
   }
-  execSync(`hygen setup ${select}`, {stdio: 'inherit'});
+  
+  execSync(`hygen setup ${select}`, { stdio: 'inherit' });
 
   const toggle = await new Toggle({
     message: 'Do you need sentry?',
@@ -73,8 +66,8 @@ const {name} = require('./app.json');
   console.log(toggle, 'TOGGLE');
 
   if (toggle) {
-    execSync('npm install --save @sentry/react-native', {stdio: 'inherit'});
-    execSync('hygen setup sentry', {stdio: 'inherit'});
+    execSync('npm install --save @sentry/react-native', { stdio: 'inherit' });
+    execSync('hygen setup sentry', { stdio: 'inherit' });
   }
 
   // @sentry/react-native
