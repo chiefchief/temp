@@ -9,3 +9,6 @@ skip_if: watchman
     "pod_clean": "cd ios && pod deintegrate && pod clean && pod install && cd ../",
     "postinstall": "npm run pod_clean",
     "watchman": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf node_modules/ && npm cache verify && npm install && npm start -- --reset-cache",
+    "h_screen": "hygen generate screen",
+    "h_component": "hygen generate component",
+    "h_screenComponent": "hygen generate screen-component",

@@ -9,7 +9,7 @@ import AppNavigator from './_AppNavigator/AppNavigator';
 const App: React.FC = () => {
   return (
     <View style={{flex: 1}}>
-      <StatusBar backgroundColor={'transparent'} barStyle="light-content" translucent={true} />
+      <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} translucent={true} />
       <AppNavigator />
     </View>
   );
