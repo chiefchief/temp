@@ -2,12 +2,12 @@
 to: src/components/typography/TextInput/TextInput.tsx
 unless_exists: true
 ---
-import React from 'react';
+import React, {forwardRef, ForwardRefRenderFunction} from 'react';
 import {TextInput as TI, TextInputProps} from 'react-native';
 import styles from './styles';
 
-const TextInput: React.FC<TextInputProps> = ({style, ...TIProps}) => {
-  return <TI style={[styles.defaultText, style]} {...TIProps} />;
+const TextInput: ForwardRefRenderFunction<TI, TextInputProps> = ({style, ...otherProps}, ref) => {
+  return <TI ref={ref} style={[styles.defaultText, style]} {...otherProps} />;
 };
 
-export default TextInput;
+export default forwardRef(TextInput);
