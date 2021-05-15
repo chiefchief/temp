@@ -11,7 +11,7 @@ import {
 } from '@screens';
 import {navigationRef, onStateChange} from '@services';
 
-const InitialStack = createStackNavigator();
+const RootStack = createStackNavigator();
 const AuthStack = createStackNavigator();
 const HomeStack = createStackNavigator();
 
@@ -34,13 +34,13 @@ const HomeNavigator: React.FC = () => {
 const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer ref={navigationRef} onStateChange={onStateChange}>
-      <InitialStack.Navigator screenOptions={{headerShown: false}}>
+      <RootStack.Navigator screenOptions={{headerShown: false}}>
         {false ? (
-          <InitialStack.Screen name="HomeNavigator" component={HomeNavigator} />
+          <RootStack.Screen name="HomeNavigator" component={HomeNavigator} />
         ) : (
-          <InitialStack.Screen name="AuthNavigator" component={AuthNavigator} />
+          <RootStack.Screen name="AuthNavigator" component={AuthNavigator} />
         )}
-      </InitialStack.Navigator>
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };

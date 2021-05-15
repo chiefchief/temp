@@ -20,8 +20,8 @@ module.exports = {
           '@services': ['./src/services'],
           '@types': ['./src/types'],
         },
-        cwd: 'packagejson',
       },
     ],
+    'react-native-reanimated/plugin',
   ],
 };

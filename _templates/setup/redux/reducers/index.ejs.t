@@ -13,5 +13,5 @@ const rootReducer = combineReducers({
   // ADD NEW REDUCER
 });
 
-export type TAppState = ReturnType<typeof rootReducer>
-export default rootReducer
+export type TAppState = ReturnType<typeof rootReducer>;
+export default rootReducer;
