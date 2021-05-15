@@ -2,7 +2,6 @@
 to: src/reducers/<%=h.changeCase.camelCase(name)%>.ts
 ---
 import {takeLatest, put, call, select} from 'redux-saga/effects';
-import {push} from '@services';
 import {INITIAL_<%=h.changeCase.constant(name)%>} from './__proto__';
 
 enum <%=h.changeCase.pascal(name)%>Types {
