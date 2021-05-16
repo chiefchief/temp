@@ -25,7 +25,7 @@ const { name } = require('./app.json');
   execSync('git init', { stdio: 'inherit' });
 
   execSync(
-    'npm i --save-dev @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
+    'npm i --save-dev @trivago/prettier-plugin-sort-imports @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
     { stdio: 'inherit' },
   );
 
@@ -54,7 +54,7 @@ const { name } = require('./app.json');
       stdio: 'inherit',
     });
   }
-  
+
   execSync(`hygen setup ${select}`, { stdio: 'inherit' });
 
   const toggle = await new Toggle({
