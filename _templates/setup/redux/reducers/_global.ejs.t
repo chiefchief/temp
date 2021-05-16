@@ -2,13 +2,12 @@
 to: src/reducers/_global.ts
 unless_exists: true
 ---
-// USES FOR GLOBAL NOT PERSISTED ITEMS
 import {takeLatest} from 'redux-saga/effects';
 import {INITIAL_GLOBAL} from './__proto__';
 
-enum _globalTypes{
-  LOG_OUT = '[_persisted] LOG_OUT',
-  LOG_IN = '[_persisted] LOG_IN',
+enum _globalTypes {
+  LOG_OUT = '[_global] LOG_OUT',
+  LOG_IN = '[_global] LOG_IN',
   SET_LOADER = '[_global] SET_LOADER',
   RESET_GLOBAL = '[_global] RESET_GLOBAL',
 }

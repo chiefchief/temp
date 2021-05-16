@@ -34,7 +34,7 @@ export {
 
 export {
   useHeaderHeight, // HeaderHeight
-} from '@react-navigation/stack';
+} from '@react-navigation/elements';
 
 // https://react.i18next.com/latest/usetranslation-hook
 export {

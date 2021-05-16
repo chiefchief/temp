@@ -4,6 +4,7 @@ unless_exists: true
 ---
 import axios from 'axios';
 import {TGenerateOptions, TFormatResponse} from '@types';
+import {Urls} from '@constants';
 
 const baseURL = __DEV__ ? 'http://192.168.0.1:1204/' : 'http://192.168.0.1:1204/';
 
@@ -11,8 +12,8 @@ const instance = axios.create();
 instance.defaults.baseURL = baseURL;
 instance.defaults.timeout = 24000;
 
-export const httpPost = (url: string, data?: any) => sendRequest({method: 'POST', url, data});
-export const httpGet = (url: string, params?: any) => sendRequest({method: 'GET', url, params});
+export const httpPost = (url: Urls, data?: any) => sendRequest({method: 'POST', url, data});
+export const httpGet = (url: Urls, params?: any) => sendRequest({method: 'GET', url, params});
 
 const formatResponse: (response?: any) => TFormatResponse = (response = {}) => ({
   data: response.data || {},

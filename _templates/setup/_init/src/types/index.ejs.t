@@ -2,10 +2,12 @@
 to: src/types/index.ts
 unless_exists: true
 ---
+import {Urls} from '@constants';
+
 // REQUESTS
 export type TGenerateOptions = {
   method: 'POST' | 'GET' | 'PUT' | 'DELETE';
-  url: string;
+  url: Urls;
   data?: any;
   params?: any;
 };

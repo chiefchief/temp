@@ -8,7 +8,6 @@ import {View, Text} from '@components';
 import styles from './styles';
 
 const Start: React.FC<TProps> = () => {
-  // Start screen data.
   const {t} = useTranslation();
 
   return (

@@ -2,20 +2,20 @@
 to: src/services/i18n.ts
 unless_exists: true
 ---
-import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import {languages} from '@constants';
+import i18n from 'i18next';
+import {Languages} from '@constants';
 
 const en = require('./localization/en.json');
 
-const defaultLanguage = languages.EN;
+const defaultLanguage = Languages.EN;
 
 export default i18n.use(initReactI18next).init({
   resources: {
-    [languages.EN]: {translation: en},
+    [Languages.EN]: {translation: en},
   },
   lng: defaultLanguage,
-  fallbackLng: languages.EN,
+  fallbackLng: Languages.EN,
   react: {
     nsMode: 'default',
   },

@@ -31,7 +31,7 @@ const HomeNavigator: React.FC = () => {
   );
 };
 
-const AppNavigator: React.FC = () => {
+export const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer ref={navigationRef} onStateChange={onStateChange}>
       <RootStack.Navigator screenOptions={{headerShown: false}}>
@@ -44,5 +44,3 @@ const AppNavigator: React.FC = () => {
     </NavigationContainer>
   );
 };
-
-export default AppNavigator;

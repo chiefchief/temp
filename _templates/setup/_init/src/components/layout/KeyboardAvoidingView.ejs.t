@@ -5,7 +5,7 @@ unless_exists: true
 import React from 'react';
 import {KeyboardAvoidingView as KAView, KeyboardAvoidingViewProps, Platform} from 'react-native';
 
-const KeyboardAvoidingView: React.FC<TProps> = ({children, iosBehavior, androidBehavior, ...props}) => {
+export const KeyboardAvoidingView: React.FC<TProps> = ({children, iosBehavior, androidBehavior, ...props}) => {
   const behavior: TBehavior = Platform.select({
     ios: iosBehavior || 'padding',
     android: androidBehavior || undefined,
@@ -18,10 +18,7 @@ const KeyboardAvoidingView: React.FC<TProps> = ({children, iosBehavior, androidB
   );
 };
 
-export default KeyboardAvoidingView;
-
 type TProps = {
-  children: React.ReactNode;
   iosBehavior?: TBehavior;
   androidBehavior?: TBehavior;
 } & KeyboardAvoidingViewProps;

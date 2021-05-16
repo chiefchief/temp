@@ -2,38 +2,50 @@
 to: src/services/route.ts
 unless_exists: true
 ---
-import React from 'react';
-import {NavigationState, PartialState} from '@react-navigation/native';
+import {NavigationState, PartialState, createNavigationContainerRef} from '@react-navigation/native';
 import {StackActions} from '@react-navigation/routers';
-import {NavigationContainerRef} from '@react-navigation/core';
+
+// NEED TO FIX navigate types
 
 export let currentRouteName: string = '';
 
-export const navigationRef: React.RefObject<NavigationContainerRef> = React.createRef();
-export const onStateChange: TOnStateChange = (state) => {
+export const navigationRef = createNavigationContainerRef();
+export const onStateChange: TOnStateChange = state => {
   currentRouteName = parseRoute(state);
 };
 
 export function navigate(name: string, params?: any) {
-  navigationRef?.current?.navigate(name, params);
+  if (navigationRef.isReady()) {
+    navigationRef.navigate(name as never, params as never);
+  }
 }
 export function goBack() {
-  navigationRef?.current?.goBack();
+  if (navigationRef.isReady()) {
+    navigationRef.goBack();
+  }
 }
 export function reset(name: string, params?: any) {
-  navigationRef?.current?.reset({routes: [{name, params}]});
+  if (navigationRef.isReady()) {
+    navigationRef.reset({routes: [{name, params}]});
+  }
 }
 export function push(name: string, params?: any) {
-  navigationRef?.current?.dispatch(StackActions.push(name, params));
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(StackActions.push(name, params));
+  }
 }
-export function pop() {
-  navigationRef?.current?.dispatch(StackActions.pop());
+export function pop(count?: number) {
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(StackActions.pop(count));
+  }
 }
 export function popToTop() {
-  navigationRef?.current?.dispatch(StackActions.popToTop());
+  if (navigationRef.isReady()) {
+    navigationRef.dispatch(StackActions.popToTop());
+  }
 }
 
-export const parseRoute: TParseRoute = (initialState) => {
+export const parseRoute: TParseRoute = initialState => {
   const state = initialState?.routes[0]?.state || undefined;
   const name = initialState?.routes[0]?.name || 'No Screen Name';
   if (state) {
