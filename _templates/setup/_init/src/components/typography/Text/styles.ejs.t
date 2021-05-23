@@ -2,11 +2,10 @@
 to: src/components/typography/Text/styles.ts
 unless_exists: true
 ---
-import {StyleSheet} from 'react-native';
-import {colors} from '@constants';
+import {makeStyles} from '@services';
 
-export default StyleSheet.create({
+export const useStyles = makeStyles(theme => ({
   defaultText: {
-    color: colors.black_000000,
+    color: theme.text,
   },
-});
+}));

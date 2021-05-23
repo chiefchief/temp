@@ -2,12 +2,11 @@
 to: src/components/typography/TextInput/styles.ts
 unless_exists: true
 ---
-import {StyleSheet} from 'react-native';
-import {colors} from '@constants';
+import {makeStyles} from '@services';
 
-export default StyleSheet.create({
+export const useStyles = makeStyles(theme => ({
   defaultText: {
     padding: 0,
-    color: colors.black_000000,
+    color: theme.text,
   },
-});
+}));

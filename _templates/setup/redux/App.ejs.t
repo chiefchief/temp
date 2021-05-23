@@ -8,13 +8,16 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {AppNavigator} from './_AppNavigator/AppNavigator';
 import {store, persistor} from './store';
+import {themeLight, ThemeProvider} from '@services';
 
 export const App: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} translucent={true} />
-        <AppNavigator />
+        <ThemeProvider theme={themeLight}>
+          <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} translucent={true} />
+          <AppNavigator />
+        </ThemeProvider>
       </PersistGate>
     </Provider>
   );
