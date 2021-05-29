@@ -3,7 +3,8 @@ to: src/reducers/_global.ts
 unless_exists: true
 ---
 import {takeLatest} from 'redux-saga/effects';
-import {INITIAL_GLOBAL} from './__proto__';
+import {Initial_global} from './__proto__';
+import {AnyAction} from 'redux';
 
 enum _globalTypes {
   LOG_OUT = '[_global] LOG_OUT',
@@ -12,12 +13,12 @@ enum _globalTypes {
   RESET_GLOBAL = '[_global] RESET_GLOBAL',
 }
 
-const initialstate = new INITIAL_GLOBAL();
+const initialstate = new Initial_global();
 
-export default (state = initialstate, action: any) => {
+export default (state = initialstate, action: AnyAction) => {
   switch (action.type) {
     case _globalTypes.SET_LOADER:
-      return new INITIAL_GLOBAL({...state, loader: action.loader});
+      return new Initial_global({...state, loader: action.loader});
     case _globalTypes.RESET_GLOBAL:
       return initialstate;
     default:

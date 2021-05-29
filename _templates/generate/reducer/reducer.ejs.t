@@ -2,7 +2,8 @@
 to: src/reducers/<%=h.changeCase.camelCase(name)%>.ts
 ---
 import {takeLatest} from 'redux-saga/effects';
-import {INITIAL_<%=h.changeCase.constant(name)%>} from './__proto__';
+import {Initial<%=h.changeCase.pascal(name)%>} from './__proto__';
+import {AnyAction} from 'redux';
 
 enum <%=h.changeCase.pascal(name)%>Types {
   GET_<%=h.changeCase.constant(name)%> = '[<%=h.changeCase.camelCase(name)%>] GET_<%=h.changeCase.constant(name)%>',
@@ -10,12 +11,12 @@ enum <%=h.changeCase.pascal(name)%>Types {
   RESET_<%=h.changeCase.constant(name)%> = '[<%=h.changeCase.camelCase(name)%>] RESET_<%=h.changeCase.constant(name)%>',
 }
 
-const initialstate = new INITIAL_<%=h.changeCase.constant(name)%>();
+const initialstate = new Initial<%=h.changeCase.pascal(name)%>();
 
-export default (state = initialstate, action: any) => {
+export default (state = initialstate, action: AnyAction) => {
   switch (action.type) {
     case <%=h.changeCase.pascal(name)%>Types.SET_<%=h.changeCase.constant(name)%>:
-      return new INITIAL_<%=h.changeCase.constant(name)%>({...state, data: action.data});
+      return new Initial<%=h.changeCase.pascal(name)%>({...state, data: action.data});
     case <%=h.changeCase.pascal(name)%>Types.RESET_<%=h.changeCase.constant(name)%>:
       return initialstate;
     default:
