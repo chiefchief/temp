@@ -30,7 +30,7 @@ const { name } = require('./app.json');
   );
 
   execSync(
-    'npm i -s axios lodash react-native-modal react-native-modal-translucent @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image',
+    'npm i -s axios lodash react-native-modal @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image',
     { stdio: 'inherit' },
   );
 
