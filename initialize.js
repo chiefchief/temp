@@ -12,9 +12,6 @@ const {
   Select,
 } = require('enquirer');
 // live-plugin-manager AS ALTERNATIVE
-// const {exec, execSync, spawn} = require('child_process');
-// const util = require('util');
-// const exec = util.promisify(require('child_process').exec);
 const { execSync } = require('child_process');
 const { name } = require('./app.json');
 
@@ -25,7 +22,7 @@ const { name } = require('./app.json');
   execSync('git init', { stdio: 'inherit' });
 
   execSync(
-    'npm i --save-dev @trivago/prettier-plugin-sort-imports @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
+    'npm i -D @trivago/prettier-plugin-sort-imports @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
     { stdio: 'inherit' },
   );
 
@@ -292,5 +289,10 @@ const { name } = require('./app.json');
   // console.log(snip, '---> snip');
   // console.log(togl, '---> togl');
   // console.log(togled, '---> togled');
+
+  execSync('rm -rf _templates/setup', { stdio: 'inherit' });
   console.log('Installation finished!');
+
+  execSync('rm -rf initialize.js', { stdio: 'inherit' });
+
 })();
