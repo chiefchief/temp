@@ -4,10 +4,11 @@ to: src/screens/<%=h.changeCase.pascal(name)%>/<%=h.changeCase.pascal(name)%>.ts
 import React from 'react';
 import {useTranslation} from '@hooks';
 import {View, Text} from '@components';
-import styles from './styles';
+import {useStyle} from './styles';
 
 const <%= h.changeCase.pascal(name) %>: React.FC<TProps> = () => {
   const {t} = useTranslation();
+  const {styles} = useStyle();
 
   return (
     <View style={styles.container}>

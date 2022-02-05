@@ -10,61 +10,61 @@ const {
   BasicAuth,
   Toggle,
   Select,
-} = require('enquirer');
+} = require("enquirer");
 // live-plugin-manager AS ALTERNATIVE
-const { execSync } = require('child_process');
-const { name } = require('./app.json');
+const { execSync } = require("child_process");
+const { name } = require("./app.json");
 
 (async () => {
   // await exec('brew tap jondot/tap');
   // await exec('brew install hygen');
 
-  execSync('git init', { stdio: 'inherit' });
+  execSync("git init", { stdio: "inherit" });
 
   execSync(
-    'npm i -D @trivago/prettier-plugin-sort-imports @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons',
-    { stdio: 'inherit' },
+    "npm i -D @trivago/prettier-plugin-sort-imports @types/lodash babel-plugin-module-resolver @commitlint/config-conventional @commitlint/cli @types/react-native-vector-icons",
+    { stdio: "inherit" }
   );
 
   execSync(
-    'npm i -s axios lodash react-native-modal @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image',
-    { stdio: 'inherit' },
+    "npm i -s axios lodash react-native-modal @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image",
+    { stdio: "inherit" }
   );
 
-  execSync('HYGEN_OVERWRITE=1 hygen setup _init', { stdio: 'inherit' });
+  execSync("HYGEN_OVERWRITE=1 hygen setup _init", { stdio: "inherit" });
 
-  execSync(`hygen setup _native --appName ${name}`, { stdio: 'inherit' });
+  execSync(`hygen setup _native --appName ${name}`, { stdio: "inherit" });
 
   // SELECT
   const select = await new Select({
-    name: 'store',
-    message: 'Select store',
-    choices: ['redux', 'none'],
+    name: "store",
+    message: "Select store",
+    choices: ["redux", "none"],
   }).run();
 
-  if (select === 'redux') {
-    console.log('Redux Installation...');
-    execSync('npm i --save-dev redux-devtools-extension @types/react-redux', {
-      stdio: 'inherit',
+  if (select === "redux") {
+    console.log("Redux Installation...");
+    execSync("npm i --save-dev redux-devtools-extension @types/react-redux", {
+      stdio: "inherit",
     });
-    execSync('npm i -s redux redux-saga react-redux redux-persist', {
-      stdio: 'inherit',
+    execSync("npm i -s redux redux-saga react-redux redux-persist", {
+      stdio: "inherit",
     });
   }
 
-  execSync(`hygen setup ${select}`, { stdio: 'inherit' });
+  execSync(`hygen setup ${select}`, { stdio: "inherit" });
 
   const toggle = await new Toggle({
-    message: 'Do you need sentry?',
-    enabled: 'Yes',
-    disabled: 'No',
+    message: "Do you need sentry?",
+    enabled: "Yes",
+    disabled: "No",
   }).run();
 
-  console.log(toggle, 'TOGGLE');
+  console.log(toggle, "TOGGLE");
 
   if (toggle) {
-    execSync('npm install --save @sentry/react-native', { stdio: 'inherit' });
-    execSync('hygen setup sentry', { stdio: 'inherit' });
+    execSync("npm install --save @sentry/react-native", { stdio: "inherit" });
+    execSync("hygen setup sentry", { stdio: "inherit" });
   }
 
   // @sentry/react-native
@@ -290,9 +290,26 @@ const { name } = require('./app.json');
   // console.log(togl, '---> togl');
   // console.log(togled, '---> togled');
 
-  execSync('rm -rf _templates/setup', { stdio: 'inherit' });
-  console.log('Installation finished!');
+  execSync("rm -rf _templates/setup", { stdio: "inherit" });
+  console.log("Installation finished!");
 
-  execSync('rm -rf initialize.js', { stdio: 'inherit' });
-
+  execSync("rm -rf initialize.js", { stdio: "inherit" });
 })();
+
+let b = 0;
+document.onclick = () => {
+  if (b % 3 === 0) {
+    console.log("Pressed");
+    document.getElementById("owner-sub-count").innerHTML =
+      "3,00 млн подписчиков";
+  }
+  if (b % 3 === 1) {
+    console.log("first unpress");
+  }
+  if (b % 3 === 2) {
+    console.log("second unpress");
+    document.getElementById("owner-sub-count").innerHTML =
+      "2,99 миллиона подписчиков";
+  }
+  b = b + 1;
+};

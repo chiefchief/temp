@@ -3,7 +3,7 @@ to: src/services/theme/makeStyles.ts
 ---
 import {useContext} from '@hooks';
 import {StyleSheet} from 'react-native';
-import {ThemeContext} from './Provider';
+import {ThemeContext} from './ThemeProvider';
 import {Theme} from './themes';
 
 type StyleCreator<T, P> = T | ((theme: Theme, props: P) => T);

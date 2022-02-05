@@ -1,8 +1,7 @@
 ---
 inject: true
-to: ios/<%=appName%>/Info.plist
-after: <dict>
-skip_if: <key>ITSAppUsesNonExemptEncryption</key>
+to: /android/app/build.gradle
+after: defaultConfig {
+skip_if: multiDexEnabled true
 ---
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
+	multiDexEnabled true

@@ -3,9 +3,11 @@ to: src/components/<%= folder %>/<%= h.changeCase.pascal(name) %>/<%= h.changeCa
 ---
 import React from 'react';
 import {View} from '@components';
-import styles from './styles';
+import {useStyle} from './styles';
 
 export const <%= h.changeCase.pascal(name) %>: React.FC<TProps> = () => {
+  const {styles} = useStyle();
+
   return <View style={styles.container}>{/* content */}</View>;
 };
 

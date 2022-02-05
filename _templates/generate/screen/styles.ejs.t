@@ -1,8 +1,10 @@
 ---
 to: src/screens/<%=h.changeCase.pascal(name)%>/styles.ts
 ---
-import {StyleSheet} from 'react-native';
+import {makeStyles} from '@services';
 
-export default StyleSheet.create({
-  container: {},
-});
+export const useStyle = makeStyles(theme => ({
+  container: {
+    backgroundColor: theme.appBackground,
+  },
+}));

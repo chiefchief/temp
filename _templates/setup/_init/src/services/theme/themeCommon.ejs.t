@@ -10,7 +10,7 @@ export const themeCommon: TCommon = {
 export type TCommon = {
   space: {
     /**
-     * devault value equal "8"
+     * @default 8
      */
     unit: number;
   };

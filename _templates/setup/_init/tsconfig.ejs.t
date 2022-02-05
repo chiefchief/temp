@@ -12,6 +12,7 @@ skip_if: assets
       "@helpers": ["src/helpers/index"],
       "@hooks": ["src/hooks/index"],
       "@reducers/*": ["src/reducers/*"],
+      "@reducers": ["src/reducers/index"],
       "@screens": ["src/screens/index"],
       "@services": ["src/services/index"],
       "@types": ["src/types/index"]
