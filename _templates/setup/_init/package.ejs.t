@@ -15,3 +15,4 @@ skip_if: watchman
     "h:screen-component": "hygen generate screen-component",
     "update:icons": "node src/components/typography/Icon/generateSet.js",
     "tsc": "tsc",
+    "format": "prettier . --write",
