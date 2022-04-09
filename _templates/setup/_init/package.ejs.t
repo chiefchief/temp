@@ -13,3 +13,5 @@ skip_if: watchman
     "h:reducer": "hygen generate reducer",
     "h:screen": "hygen generate screen",
     "h:screen-component": "hygen generate screen-component",
+    "update:icons": "node src/components/typography/Icon/generateSet.js",
+    "tsc": "tsc",
