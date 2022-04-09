@@ -5,4 +5,4 @@ unless_exists: true
 export {width, height, top, bottom} from './safeSpaces';
 export {Languages} from './languages';
 export {Urls} from './urls';
-export {layoutAnimation} from './common'
+export {layoutAnimation} from './common';
