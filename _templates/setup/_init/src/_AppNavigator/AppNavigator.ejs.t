@@ -4,12 +4,12 @@ unless_exists: true
 ---
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
   Start,
   // ADD NEW SCREEN
 } from '@screens';
-import {navigationRef, onStateChange} from '@services';
+import {navigationService} from '@services';
 
 const RootStack = createNativeStackNavigator();
 const AuthStack = createNativeStackNavigator();
@@ -33,7 +33,7 @@ const HomeNavigator: React.FC = () => {
 
 export const AppNavigator: React.FC = () => {
   return (
-    <NavigationContainer ref={navigationRef} onStateChange={onStateChange}>
+    <NavigationContainer ref={navigationService.navigationRef}>
       <RootStack.Navigator screenOptions={{headerShown: false}}>
         {false ? (
           <RootStack.Screen name="HomeNavigator" component={HomeNavigator} />

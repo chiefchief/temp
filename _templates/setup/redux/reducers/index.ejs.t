@@ -14,4 +14,4 @@ export const rootReducer = combineReducers({
 });
 
 export type TAppState = ReturnType<typeof rootReducer>;
-export {rootSaga} from './sagas'
+export {rootSaga} from './sagas';
