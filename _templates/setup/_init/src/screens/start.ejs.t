@@ -7,7 +7,7 @@ import {useTranslation} from '@hooks';
 import {View, Text} from '@components';
 import styles from './styles';
 
-const Start: React.FC<TProps> = () => {
+export const Start: React.FC<TProps> = () => {
   const {t} = useTranslation();
 
   return (
@@ -16,7 +16,5 @@ const Start: React.FC<TProps> = () => {
     </View>
   );
 };
-
-export default Start;
 
 type TProps = {};
