@@ -1,21 +1,21 @@
 ---
-to: src/services/i18n.ts
+to: src/services/localization/i18n.ts
 unless_exists: true
 ---
 import {initReactI18next} from 'react-i18next';
 import i18n from 'i18next';
 import {Languages} from '@constants';
+import en from './en.json';
 
-const en = require('./localization/en.json');
-
-const defaultLanguage = Languages.EN;
+const defaultLanguage = Languages.en;
 
 export default i18n.use(initReactI18next).init({
+  compatibilityJSON: 'v3',
   resources: {
-    [Languages.EN]: {translation: en},
+    [Languages.en]: {translation: en},
   },
   lng: defaultLanguage,
-  fallbackLng: Languages.EN,
+  fallbackLng: Languages.en,
   react: {
     nsMode: 'default',
   },

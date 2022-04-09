@@ -7,7 +7,7 @@ import _global from './_global';
 import _persisted from './_persisted';
 // ADD IMPORT
 
-expot const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   _global,
   _persisted,
   // ADD NEW REDUCER
