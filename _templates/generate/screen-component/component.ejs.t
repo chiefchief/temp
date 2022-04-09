@@ -1,14 +1,14 @@
 ---
-to: src/screens/<%=folder%>/components/<%=h.changeCase.pascal(name)%>/<%=h.changeCase.pascal(name)%>.tsx
+to: src/screens/<%=folder%>/components/<%=h.changeCase.pascal(name)%>.tsx
 ---
 import React from 'react';
 import {View} from '@components';
-import {useStyle} from './styles';
+import {useStyles} from './styles';
 
-export const <%=h.changeCase.pascal(name)%>: React.FC<TProps> = ({}) => {
-  const {styles} = useStyle();
+export const <%=h.changeCase.pascal(name)%>: React.FC<<%=h.changeCase.pascal(name)%>Props> = ({}) => {
+  const {styles} = useStyles();
 
   return <View style={styles.container}>{/* content */}</View>;
 };
 
-type TProps = {};
+export type <%=h.changeCase.pascal(name)%>Props = {};

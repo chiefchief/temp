@@ -27,7 +27,7 @@ const { name } = require("./app.json");
   );
 
   execSync(
-    "npm i -s axios lodash react-native-modal @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image",
+    "npm i -s axios lodash react-native-modal @react-native-async-storage/async-storage i18next react-i18next react-native-vector-icons @react-navigation/native @react-navigation/native-stack @react-navigation/elements react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context react-native-fast-image",
     { stdio: "inherit" }
   );
 
@@ -295,21 +295,3 @@ const { name } = require("./app.json");
 
   execSync("rm -rf initialize.js", { stdio: "inherit" });
 })();
-
-let b = 0;
-document.onclick = () => {
-  if (b % 3 === 0) {
-    console.log("Pressed");
-    document.getElementById("owner-sub-count").innerHTML =
-      "3,00 млн подписчиков";
-  }
-  if (b % 3 === 1) {
-    console.log("first unpress");
-  }
-  if (b % 3 === 2) {
-    console.log("second unpress");
-    document.getElementById("owner-sub-count").innerHTML =
-      "2,99 миллиона подписчиков";
-  }
-  b = b + 1;
-};

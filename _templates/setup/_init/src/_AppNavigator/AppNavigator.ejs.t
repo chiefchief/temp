@@ -4,16 +4,16 @@ unless_exists: true
 ---
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   Start,
   // ADD NEW SCREEN
 } from '@screens';
 import {navigationRef, onStateChange} from '@services';
 
-const RootStack = createStackNavigator();
-const AuthStack = createStackNavigator();
-const HomeStack = createStackNavigator();
+const RootStack = createNativeStackNavigator();
+const AuthStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 
 const AuthNavigator: React.FC = () => {
   return (

@@ -7,8 +7,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {persistStore, persistReducer} from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-import reducers from './reducers';
-import rootSaga from './reducers/sagas';
+import {rootReducer, rootSaga} from './reducers';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +18,7 @@ const persistConfig = {
   whitelist: ['_persisted'], // ADD WHITE LIST IF YOU NEED
 };
 
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const enhancer = composeWithDevTools(applyMiddleware(sagaMiddleware));
 const store = createStore(persistedReducer, enhancer);

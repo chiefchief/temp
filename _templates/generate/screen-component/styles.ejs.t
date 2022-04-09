@@ -1,9 +1,9 @@
 ---
-to: src/screens/<%=folder%>/components/<%=h.changeCase.pascal(name)%>/styles.ts
+to: src/screens/<%=folder%>/components/styles.ts
 ---
 import {makeStyles} from '@services';
 
-export const useStyle = makeStyles(theme => ({
+export const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: theme.appBackground,
   },
