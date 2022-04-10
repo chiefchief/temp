@@ -1,22 +1,27 @@
 ---
 to: src/services/theme/themes.ts
 ---
+import {StatusBarStyle} from 'react-native';
 import {TCommon, themeCommon} from './themeCommon';
 
 export const themeLight: Theme = {
   ...themeCommon,
-  appBackground: '#0000FF',
+  statusBarStyle: 'dark-content',
+  background: '#999999',
   text: '#FF0000',
 };
 
 export const themeDark: Theme = {
   ...themeCommon,
-  appBackground: '#FFFFFF',
+  statusBarStyle: 'light-content',
+  background: '#FFFFFF',
   text: '#000000',
 };
 
 type ThemeStyle = {
-  appBackground: string;
+  /** @default light: 'dark-content', dark: 'light-content' */
+  statusBarStyle: StatusBarStyle;
+  background: string;
   text: string;
 };
 
